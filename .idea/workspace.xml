@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="39bc8750-81b7-46a5-9941-fe2a0750cd2e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="E:\tankwar\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1i2gnT048SgbxqgtlQDfDj0ce3h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39bc8750-81b7-46a5-9941-fe2a0750cd2e" name="Default Changelist" comment="" />
+      <created>1601111268102</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601111268102</updated>
+      <workItem from="1601111274738" duration="528000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="3294" y="26" key="CommitChangelistDialog2" timestamp="1601111552229">
+      <screen x="2736" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3294" y="26" key="CommitChangelistDialog2/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601111552229" />
+    <state x="3476" y="261" key="FileChooserDialogImpl" timestamp="1601111520675">
+      <screen x="2736" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3476" y="261" key="FileChooserDialogImpl/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601111520675" />
+    <state x="3444" y="411" width="277" height="216" key="Github.ShareDialog" timestamp="1601111859060">
+      <screen x="2736" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3444" y="411" width="277" height="216" key="Github.ShareDialog/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601111859060" />
+    <state x="3565" y="139" key="Github.UntrackedFilesDialog" timestamp="1601111868335">
+      <screen x="2736" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3565" y="139" key="Github.UntrackedFilesDialog/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601111868335" />
+    <state x="3197" y="162" key="SettingsEditor" timestamp="1601111626544">
+      <screen x="2736" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3197" y="162" key="SettingsEditor/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601111626544" />
+    <state x="3288" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601111921517">
+      <screen x="2736" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3288" y="249" key="Vcs.Push.Dialog.v2/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601111921517" />
+  </component>
+</project>
