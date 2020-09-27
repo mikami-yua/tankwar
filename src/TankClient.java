@@ -3,6 +3,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -12,7 +15,9 @@ public class TankClient extends Frame {
     public static final int GAMR_WIDTH=800;
     public static final int GAMR_HEIGTH=600;
 
-    Tank myTank=new Tank(50,50);
+    Tank myTank=new Tank(50,50,true,this);
+    Tank enemyTank=new Tank(150,150,false,this);
+    List<Missile> missiles=new ArrayList<>();
 
     //doublebuffer,调用repaint的时候不能直接调用paint方法。调用paint方法之前必须首先把所有东西画在背面，再更新屏幕
     //1.定义背后的图片
@@ -58,7 +63,15 @@ public class TankClient extends Frame {
      */
     @Override
     public void paint(Graphics g) {
+        g.drawString("missile count: "+missiles.size(),10,50);//把字符串画在后两个参数的位置上
+
+        for(int i=0;i<missiles.size();i++){
+            Missile m=missiles.get(i);
+            m.hitTank(enemyTank);
+            m.draw(g);
+        }
         myTank.draw(g);//frame递给的画笔，再递给坦克
+        enemyTank.draw(g);
     }
 
     /**
