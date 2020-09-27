@@ -4,7 +4,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -14,12 +13,15 @@ public class TankClient extends Frame {
     //将窗口大小定义为常量
     public static final int GAMR_WIDTH=800;
     public static final int GAMR_HEIGTH=600;
+    public static final int GAME_ENEMTNUM=10;
 
-    Tank myTank=new Tank(50,50,true,this);
-    Tank enemyTank=new Tank(150,150,false,this);
+    Tank myTank=new Tank(50,50,true,Tank.Direction.STOP,this);
+    Wall w1=new Wall(100,200,20,150,this);
+    Wall w2=new Wall(300,100,300,20,this);
 
     List<Missile> missiles=new ArrayList<>();
     List<Explode> explodes=new ArrayList<>();
+    List<Tank> tanks=new ArrayList<>();
 
     //doublebuffer,调用repaint的时候不能直接调用paint方法。调用paint方法之前必须首先把所有东西画在背面，再更新屏幕
     //1.定义背后的图片
@@ -27,6 +29,12 @@ public class TankClient extends Frame {
 
 
     public void lauchFrame(){
+        //窗口显示前，添加若干tank
+        for (int i=0;i<GAME_ENEMTNUM;i++){
+            tanks.add(new Tank(50+40*(i+1),50,false,Tank.Direction.D,this));
+        }
+
+
         //定义窗口出现的位置
         this.setLocation(400,300);//屏幕的左上角点，往右数400，往下数300
         //设置宽度,高度
@@ -67,18 +75,31 @@ public class TankClient extends Frame {
     public void paint(Graphics g) {
         g.drawString("missile count: "+missiles.size(),10,50);//把字符串画在后两个参数的位置上
         g.drawString("now exploding count: "+explodes.size(),200,50);
+        g.drawString("now tanks count: "+tanks.size(),500,50);
 
         for(int i=0;i<missiles.size();i++){
             Missile m=missiles.get(i);
-            m.hitTank(enemyTank);
+            m.hitTanks(tanks);
+            m.hitTank(myTank);
+            m.hitWall(w1);
+            m.hitWall(w2);
             m.draw(g);
         }
         for(int i=0;i<explodes.size();i++){
             Explode e=explodes.get(i);
             e.draw(g);
         }
+        for(int i=0;i<tanks.size();i++){
+            Tank t=tanks.get(i);
+            t.collidesWithWall(w1);
+            t.collidesWithWall(w2);
+            t.collidesWithTanks(tanks);
+            t.draw(g);
+        }
+
         myTank.draw(g);//frame递给的画笔，再递给坦克
-        enemyTank.draw(g);
+        w1.draw(g);
+        w2.draw(g);
     }
 
     /**

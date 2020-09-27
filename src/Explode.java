@@ -4,7 +4,7 @@ public class Explode {
     int x,y;//爆炸出现的位置
     private boolean live=true;//爆炸是否存在
 
-    private int[] diameter={3,5,7,9,11,13,15,17,19,21,23,27,13,11,9,7,5,3,1};//用直径不同的圆模拟爆炸
+    private int[] diameter={3,5,7,9,11,13,15,17,19,21,23,27,39,13,11,9,7,5,3,1};//用直径不同的圆模拟爆炸
     private int step=0;//现在画到第几步了
     private TankClient tc;
 

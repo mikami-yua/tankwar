@@ -1,5 +1,7 @@
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.Random;
 
 public class Tank {
     public static final int XSPEED=5;
@@ -13,6 +15,9 @@ public class Tank {
     private Direction ptDir=Direction.D;//默认炮筒方向向下
     private boolean good;
     private boolean live=true;
+    private static Random r=new Random();//建立一个随机数产生器
+    private int step=r.nextInt(16)+3;//初始最少移动3步，最多移动18步
+    private int oldX,oldY;//记录上次的位置
 
     TankClient tc;
 
@@ -24,12 +29,15 @@ public class Tank {
     public Tank(int x, int y,boolean good) {
         this.x = x;
         this.y = y;
+        this.oldX=x;
+        this.oldY=y;
         this.good=good;
     }
 
-    public Tank(int x,int y,boolean good,TankClient tc){
+    public Tank(int x,int y,boolean good,Direction dir ,TankClient tc){
         this(x,y,good);//调用另一个构造方法
         this.tc=tc;
+        this.dir=dir;
     }
 
     public boolean isLive() {
@@ -40,12 +48,26 @@ public class Tank {
         this.live = live;
     }
 
+    public boolean isGood() {
+        return good;
+    }
+
     /**
      * tank画出自己
      * @param g 传入的画笔
      */
     public void draw(Graphics g){
-        if(!live) return;
+        if(!live) {
+            /*
+            将来还需要考虑到底是玩家good=true死了
+            还是bot good=false死l
+            此版本先不考虑bot的反击
+             */
+            if(!good){
+                tc.tanks.remove(this);
+            }
+            return;
+        }
 
         //需要一个前景色（默认是黑色）
         Color c=g.getColor();
@@ -91,6 +113,10 @@ public class Tank {
     }
 
     private void move(){
+        //每move一下，记录xy的位置
+        this.oldX=x;
+        this.oldY=y;
+
         //根据当前的方向移动
         switch (dir){
             case L:
@@ -132,6 +158,22 @@ public class Tank {
         if(y<30) y=30;
         if(x+Tank.WIDTH>TankClient.GAMR_WIDTH) x=TankClient.GAMR_WIDTH-Tank.WIDTH;
         if(y+Tank.HEIGHT>TankClient.GAMR_HEIGTH) y=TankClient.GAMR_HEIGTH-Tank.HEIGHT;
+
+        /*
+        每次move的时候就让bot tank改变方向
+        使用随机数，随机产生方向
+         */
+        if(!good){
+            Direction[] dirs=Direction.values();//转换为数组
+            if(step==0){
+                step=r.nextInt(16)+3;
+                int rn=r.nextInt(dirs.length);//产生一个随机的整数，在8以内
+                dir=dirs[rn];
+            }
+            step--;
+            if(r.nextInt(30)>25) this.fire();
+        }
+
 
     }
 
@@ -202,7 +244,7 @@ public class Tank {
         else if(!bL && !bU && bR && !bD) dir=Direction.R;
         else if(!bL && !bU && bR && bD) dir=Direction.RD;
         else if(!bL && !bU && !bR && bD) dir=Direction.D;
-        else if(!bL && !bU && !bR && !bD) dir=Direction.STOP;
+        else dir=Direction.STOP;
     }
 
     /**
@@ -210,9 +252,10 @@ public class Tank {
      * @return 打出一发子弹，返回也该Missile对象
      */
     public Missile fire(){
+        if(!live) return null;
         int x=this.x+Tank.WIDTH/2 -Missile.WIDTH/2;
         int y=this.y+Tank.HEIGHT/2-Missile.HEIGHT/2;
-        Missile m=new Missile(x,y,ptDir,this.tc);//从tank的位置，向着tank的方向new一个子弹
+        Missile m=new Missile(x,y,good,ptDir,this.tc);//从tank的位置，向着tank的方向new一个子弹
         tc.missiles.add(m);
         return m;
     }
@@ -221,7 +264,47 @@ public class Tank {
      *Rectangle英文矩形
      * @return 拿到一个矩形，这个矩形是tank的位置xy，和tank的大小
      */
-    public Rectangle getReat(){
+    public Rectangle getRect(){
         return new Rectangle(x,y,WIDTH,HEIGHT);
+    }
+
+
+    /**
+     * 撞墙之后停止，回到上一个位置
+     * @param w
+     * @return
+     */
+    public boolean collidesWithWall(Wall w){
+        if(this.live && this.getRect().intersects(w.getRect())){
+            this.stayBack();
+            return true;
+        }
+        return false;
+    }
+
+    private void stayBack(){
+        x=oldX;
+        y=oldY;
+    }
+
+    /**
+     * 坦克与坦克相撞
+     * @param tanks
+     * @return
+     */
+    public boolean collidesWithTanks(List<Tank> tanks){
+        for (int i=0;i<tanks.size();i++){
+            Tank t=tanks.get(i);
+            if(this != t){//不是同一辆坦克，检测相撞
+                if(this.live && t.isLive() && this.getRect().intersects(t.getRect())){
+                    this.stayBack();
+                    t.stayBack();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        return false;
     }
 }

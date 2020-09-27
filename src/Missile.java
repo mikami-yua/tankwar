@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.List;
 
 public class Missile {
     public static final int XSPEED=10;
@@ -12,6 +13,7 @@ public class Missile {
     private boolean live=true;
     //有方向属性
     Tank.Direction dir;
+    private boolean good;
 
     public boolean isLive() {
         return live;
@@ -23,8 +25,9 @@ public class Missile {
         this.y = y;
         this.dir = dir;
     }
-    public Missile(int x, int y, Tank.Direction dir,TankClient tc){
+    public Missile(int x, int y,boolean good,Tank.Direction dir,TankClient tc){
         this(x,y,dir);
+        this.good=good;
         this.tc=tc;
     }
     
@@ -99,12 +102,30 @@ public class Missile {
      * @return
      */
     public boolean hitTank(Tank t){
-        if(this.getReat().intersects(t.getReat()) && t.isLive()) {//intersects判断是否相交了
+        if(this.live &&this.getReat().intersects(t.getRect()) && t.isLive()
+                            && this.good !=t.isGood()) {//intersects判断是否相交了
             t.setLive(false);
             this.live=false;
             //产生爆炸，产生在子弹位置
             Explode e=new Explode(this.x,this.y,this.tc);
             tc.explodes.add(e);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean hitTanks(List<Tank> tanks){
+        for(int i=0;i<tanks.size();i++){
+            if(hitTank(tanks.get(i))){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hitWall(Wall w){
+        if(this.live && this.getReat().intersects(w.getRect())){
+            this.live=false;
             return true;
         }
         return false;
