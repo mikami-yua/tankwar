@@ -17,7 +17,9 @@ public class TankClient extends Frame {
 
     Tank myTank=new Tank(50,50,true,this);
     Tank enemyTank=new Tank(150,150,false,this);
+
     List<Missile> missiles=new ArrayList<>();
+    List<Explode> explodes=new ArrayList<>();
 
     //doublebuffer,调用repaint的时候不能直接调用paint方法。调用paint方法之前必须首先把所有东西画在背面，再更新屏幕
     //1.定义背后的图片
@@ -64,11 +66,16 @@ public class TankClient extends Frame {
     @Override
     public void paint(Graphics g) {
         g.drawString("missile count: "+missiles.size(),10,50);//把字符串画在后两个参数的位置上
+        g.drawString("now exploding count: "+explodes.size(),200,50);
 
         for(int i=0;i<missiles.size();i++){
             Missile m=missiles.get(i);
             m.hitTank(enemyTank);
             m.draw(g);
+        }
+        for(int i=0;i<explodes.size();i++){
+            Explode e=explodes.get(i);
+            e.draw(g);
         }
         myTank.draw(g);//frame递给的画笔，再递给坦克
         enemyTank.draw(g);

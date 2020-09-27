@@ -102,6 +102,9 @@ public class Missile {
         if(this.getReat().intersects(t.getReat()) && t.isLive()) {//intersects判断是否相交了
             t.setLive(false);
             this.live=false;
+            //产生爆炸，产生在子弹位置
+            Explode e=new Explode(this.x,this.y,this.tc);
+            tc.explodes.add(e);
             return true;
         }
         return false;
