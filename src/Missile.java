@@ -104,7 +104,12 @@ public class Missile {
     public boolean hitTank(Tank t){
         if(this.live &&this.getReat().intersects(t.getRect()) && t.isLive()
                             && this.good !=t.isGood()) {//intersects判断是否相交了
-            t.setLive(false);
+            if(t.isGood()){
+                t.setLife(t.getLife()-20);
+                if(t.getLife()<=0) t.setLive(false);
+            }else{
+                t.setLive(false);
+            }
             this.live=false;
             //产生爆炸，产生在子弹位置
             Explode e=new Explode(this.x,this.y,this.tc);

@@ -18,6 +18,8 @@ public class Tank {
     private static Random r=new Random();//建立一个随机数产生器
     private int step=r.nextInt(16)+3;//初始最少移动3步，最多移动18步
     private int oldX,oldY;//记录上次的位置
+    private int life=100;//满生命值是100
+    private BloodBar bb=new BloodBar();
 
     TankClient tc;
 
@@ -52,6 +54,14 @@ public class Tank {
         return good;
     }
 
+    public int getLife() {
+        return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
+    }
+
     /**
      * tank画出自己
      * @param g 传入的画笔
@@ -68,7 +78,7 @@ public class Tank {
             }
             return;
         }
-
+        if(good) bb.draw(g);
         //需要一个前景色（默认是黑色）
         Color c=g.getColor();
         if(good)  g.setColor(Color.BLUE);//自己的坦克画成蓝色
@@ -186,7 +196,12 @@ public class Tank {
 //            }
         switch (key){
             //添加对crtl键的处理
-
+            case KeyEvent.VK_F2:
+                if(!this.live){
+                    this.live=true;
+                    this.life=100;
+                }
+                break;
             case KeyEvent.VK_LEFT:
                 bL=true;
                 break;
@@ -227,6 +242,9 @@ public class Tank {
             case KeyEvent.VK_DOWN:
                 bD=false;
                 break;
+            case KeyEvent.VK_A:
+                superFire();
+                break;
         }
         //最后再重新定位
         locateDirection();
@@ -259,6 +277,15 @@ public class Tank {
         tc.missiles.add(m);
         return m;
     }
+    public Missile fire(Direction dir){
+        if(!live) return null;
+        int x=this.x+Tank.WIDTH/2 -Missile.WIDTH/2;
+        int y=this.y+Tank.HEIGHT/2-Missile.HEIGHT/2;
+        Missile m=new Missile(x,y,good,dir,this.tc);//从tank的位置，向着tank的方向new一个子弹
+        tc.missiles.add(m);
+        return m;
+    }
+
 
     /**
      *Rectangle英文矩形
@@ -271,8 +298,8 @@ public class Tank {
 
     /**
      * 撞墙之后停止，回到上一个位置
-     * @param w
-     * @return
+     * @param w 被撞的墙
+     * @return 撞上了返回true
      */
     public boolean collidesWithWall(Wall w){
         if(this.live && this.getRect().intersects(w.getRect())){
@@ -305,6 +332,34 @@ public class Tank {
             }
         }
 
+        return false;
+    }
+
+    private void superFire(){
+        Direction[] dirs=Direction.values();
+        for(int i=0;i<8;i++){
+            fire(dirs[i]);
+        }
+    }
+
+    private class BloodBar{
+        public void draw(Graphics g){
+            Color c=g.getColor();
+            g.setColor(Color.RED);
+            g.drawRect(x,y-10,WIDTH,10);//画空心的,在tank上面显示，宽度是坦克的宽度，高度为10
+            //接下来画里面的框
+            int nowlife=WIDTH*life/100;
+            g.fillRect(x,y-10,nowlife,10);
+            g.setColor(c);
+        }
+    }
+
+    public Boolean eat(Blood b){
+        if(b.isLive() &&this.live && this.getRect().intersects(b.getRect())){
+            this.life=100;
+            b.setLive(false);
+            return true;
+        }
         return false;
     }
 }

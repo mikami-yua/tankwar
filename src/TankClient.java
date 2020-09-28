@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * 这个类的作用是tank游戏的主窗口
+ * @author Mr.Jia
  */
 public class TankClient extends Frame {
     //将窗口大小定义为常量
@@ -18,6 +19,7 @@ public class TankClient extends Frame {
     Tank myTank=new Tank(50,50,true,Tank.Direction.STOP,this);
     Wall w1=new Wall(100,200,20,150,this);
     Wall w2=new Wall(300,100,300,20,this);
+    Blood bb=new Blood();
 
     List<Missile> missiles=new ArrayList<>();
     List<Explode> explodes=new ArrayList<>();
@@ -27,7 +29,9 @@ public class TankClient extends Frame {
     //1.定义背后的图片
     Image offScreenImage=null;
 
-
+    /**
+     * 本方法显示tank图片
+     */
     public void lauchFrame(){
         //窗口显示前，添加若干tank
         for (int i=0;i<GAME_ENEMTNUM;i++){
@@ -73,9 +77,20 @@ public class TankClient extends Frame {
      */
     @Override
     public void paint(Graphics g) {
+        /*
+        必要信息的显示
+         */
         g.drawString("missile count: "+missiles.size(),10,50);//把字符串画在后两个参数的位置上
         g.drawString("now exploding count: "+explodes.size(),200,50);
         g.drawString("now tanks count: "+tanks.size(),500,50);
+        g.drawString("my life: "+myTank.getLife(),10,150);
+
+        //敌人死完了重新加入
+        if(tanks.size()==0){
+            for (int i=0;i<GAME_ENEMTNUM;i++){
+                tanks.add(new Tank(50+40*(i+1),500,false,Tank.Direction.D,this));
+            }
+        }
 
         for(int i=0;i<missiles.size();i++){
             Missile m=missiles.get(i);
@@ -98,8 +113,10 @@ public class TankClient extends Frame {
         }
 
         myTank.draw(g);//frame递给的画笔，再递给坦克
+        myTank.eat(bb);
         w1.draw(g);
         w2.draw(g);
+        bb.draw(g);
     }
 
     /**
