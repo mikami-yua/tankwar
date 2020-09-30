@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import java.awt.Toolkit;
 
 public class Explode {
+    private static final String migpath="E:\\javase\\tankwar\\src\\images";
     int x,y;//爆炸出现的位置
     private boolean live=true;//爆炸是否存在
 
@@ -13,18 +14,22 @@ public class Explode {
                                                             // 不同的操作系统提供的toolkit不一样.getDefaultToolkit()
                                                             //拿到默认的工具包。通过工具包里的方法把硬盘的图片拽到内存
     private static Image[] imgs={
+
             //Explode.class.getClassLoader().getResource("images/0.gif")
-            tk.getImage("E:\\tankwar\\src\\images\\0.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\1.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\2.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\3.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\4.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\5.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\6.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\7.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\8.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\9.gif"),
-            tk.getImage("E:\\tankwar\\src\\images\\10.gif")
+
+            tk.getImage(migpath+"\\0.gif"),
+            tk.getImage(migpath+"\\1.gif"),
+            tk.getImage(migpath+"\\2.gif"),
+            tk.getImage(migpath+"\\3.gif"),
+            tk.getImage(migpath+"\\4.gif"),
+            tk.getImage(migpath+"\\5.gif"),
+            tk.getImage(migpath+"\\6.gif"),
+            tk.getImage(migpath+"\\7.gif"),
+            tk.getImage(migpath+"\\8.gif"),
+            tk.getImage(migpath+"\\9.gif"),
+            tk.getImage(migpath+"\\10.gif")
+
+
     };
     private int step=0;//现在画到第几步了
     private TankClient tc;
