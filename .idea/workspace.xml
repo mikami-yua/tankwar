@@ -7,12 +7,146 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39bc8750-81b7-46a5-9941-fe2a0750cd2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jar/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Blood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/BadTank1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/BadTank2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/GoodTank1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/GoodTank2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/bulletD.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/bulletL.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/bulletR.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/bulletU.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/bulletU.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/e9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/missileLD.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/missileLU.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/missileRD.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/missileRU.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/square0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/square1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/square2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/square3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/square4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/square5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/square6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tank.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankD.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankL.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankLD.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankLU.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankR.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankRD.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankRU.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/tankU.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Log" beforeDir="false" afterPath="$PROJECT_DIR$/Log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Blood.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Explode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Missile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Tank.BloodBar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Tank.Direction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Tank.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/TankClient.KeyMonitor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/TankClient.PaintThread.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/TankClient.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Wall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-11.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-12.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-13.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-14.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-15.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-16.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-17.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-18.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-19.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-20.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-21.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index-files/index-9.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/member-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/package-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-3.4.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script-dir/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/system-properties.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/type-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jar/tankwar.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/tankwar.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Explode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Missile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Missile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TankClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TankClient.java" afterDir="false" />
@@ -26,6 +160,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -55,7 +190,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/TankWar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.1507799" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -63,6 +198,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\tankwar\src" />
       <recent name="E:\tankwar\src\TankWar" />
     </key>
   </component>
@@ -108,7 +244,9 @@
       <workItem from="1601111274738" duration="759000" />
       <workItem from="1601170399009" duration="24386000" />
       <workItem from="1601204554369" duration="7362000" />
-      <workItem from="1601265391362" duration="6390000" />
+      <workItem from="1601265391362" duration="6808000" />
+      <workItem from="1601358879990" duration="347000" />
+      <workItem from="1601453203362" duration="5580000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1601112012535</created>
@@ -152,7 +290,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601212020747</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="version 单机版结束。包含可运行的jar">
+      <created>1601298761482</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1601298761482</updated>
+    </task>
+    <task id="LOCAL-00008" summary="追加doc文档">
+      <created>1601298993639</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601298993639</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,13 +329,15 @@
     <MESSAGE value="version 1.6" />
     <MESSAGE value="version 1.7" />
     <MESSAGE value="version 2.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 2.2" />
+    <MESSAGE value="version 单机版结束。包含可运行的jar" />
+    <MESSAGE value="追加doc文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="追加doc文档" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="3448" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601173695955">
+    <state x="3448" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601458139165">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
-    <state x="3448" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601173695955" />
+    <state x="3448" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601458139165" />
     <state x="3501" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1601296005890">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
@@ -196,10 +350,10 @@
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
     <state x="3203" y="291" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601297618401" />
-    <state x="3294" y="26" key="CommitChangelistDialog2" timestamp="1601298759311">
+    <state x="3462" y="26" key="CommitChangelistDialog2" timestamp="1601460006836">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
-    <state x="3294" y="26" key="CommitChangelistDialog2/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601298759311" />
+    <state x="3462" y="26" key="CommitChangelistDialog2/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601460006836" />
     <state x="3807" y="418" key="FileChooserDialogImpl" timestamp="1601297244516">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
@@ -212,22 +366,22 @@
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
     <state x="3565" y="139" key="Github.UntrackedFilesDialog/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601111868335" />
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1601297683061">
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1601459983599">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601297683061" />
-    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1601297683061">
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
+    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1601459983599">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601297683061" />
-    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1601297683061">
+    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
+    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1601459983599">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601297683061" />
-    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1601297683061">
+    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
+    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1601459983599">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601297683061" />
+    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
     <state width="1877" height="325" key="GridCell.Tab.1.bottom" timestamp="1601212040823">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
@@ -248,21 +402,25 @@
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
     <state x="3197" y="162" key="SettingsEditor/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601298583755" />
-    <state x="3288" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601298765763">
+    <state x="3288" y="249" key="Vcs.Push.Dialog.v2" timestamp="1601298996025">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
-    <state x="3288" y="249" key="Vcs.Push.Dialog.v2/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601298765763" />
+    <state x="3288" y="249" key="Vcs.Push.Dialog.v2/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601298996025" />
     <state x="3244" y="174" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1601194167578">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
     <state x="3244" y="174" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601194167578" />
+    <state x="3070" y="98" key="new project wizard" timestamp="1601359230292">
+      <screen x="2736" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3070" y="98" key="new project wizard/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601359230292" />
     <state x="3352" y="240" key="run.anything.popup" timestamp="1601195120006">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
     <state x="3352" y="240" key="run.anything.popup/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601195120006" />
-    <state x="3359" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601210361697">
+    <state x="3359" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601456003975">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
-    <state x="3359" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601210361697" />
+    <state x="3359" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601456003975" />
   </component>
 </project>

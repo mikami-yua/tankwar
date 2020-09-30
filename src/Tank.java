@@ -24,9 +24,7 @@ public class Tank {
     TankClient tc;
 
 
-    enum Direction{//枚举8个方向和停止
-        L,LU,U,RU,R,RD,D,LD,STOP
-    };
+
 
     public Tank(int x, int y,boolean good) {
         this.x = x;

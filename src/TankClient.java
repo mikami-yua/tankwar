@@ -16,7 +16,7 @@ public class TankClient extends Frame {
     public static final int GAMR_HEIGTH=600;
     public static final int GAME_ENEMTNUM=10;
 
-    Tank myTank=new Tank(50,50,true,Tank.Direction.STOP,this);
+    Tank myTank=new Tank(50,50,true,Direction.STOP,this);
     Wall w1=new Wall(100,200,20,150,this);
     Wall w2=new Wall(300,100,300,20,this);
     Blood bb=new Blood();
@@ -35,7 +35,7 @@ public class TankClient extends Frame {
     public void lauchFrame(){
         //窗口显示前，添加若干tank
         for (int i=0;i<GAME_ENEMTNUM;i++){
-            tanks.add(new Tank(50+40*(i+1),50,false,Tank.Direction.D,this));
+            tanks.add(new Tank(50+40*(i+1),50,false,Direction.D,this));
         }
 
 
@@ -88,7 +88,7 @@ public class TankClient extends Frame {
         //敌人死完了重新加入
         if(tanks.size()==0){
             for (int i=0;i<GAME_ENEMTNUM;i++){
-                tanks.add(new Tank(50+40*(i+1),500,false,Tank.Direction.D,this));
+                tanks.add(new Tank(50+40*(i+1),500,false,Direction.D,this));
             }
         }
 
