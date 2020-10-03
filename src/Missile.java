@@ -1,5 +1,7 @@
 import java.awt.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Missile {
     public static final int XSPEED=10;
@@ -9,6 +11,35 @@ public class Missile {
 
     private TankClient tc;
 
+    private static Toolkit tk= Toolkit.getDefaultToolkit(); //通过toolkit可以获得一些适合操作系统做的事。
+    // 不同的操作系统提供的toolkit不一样.getDefaultToolkit()
+    //拿到默认的工具包。通过工具包里的方法把硬盘的图片拽到内存
+    private static Image[] missileimages =null;
+    private static Map<String,Image> imgs=new HashMap<>();
+    static {
+        missileimages =new Image[] {
+                //Explode.class.getClassLoader().getResource("images/0.gif")
+                tk.getImage(Missile.class.getClassLoader().getResource("images/bulletL.gif")),
+                tk.getImage(Missile.class.getClassLoader().getResource("images/missileLU.gif")),
+                tk.getImage(Missile.class.getClassLoader().getResource("images/bulletU.gif")),
+                tk.getImage(Missile.class.getClassLoader().getResource("images/missileRU.gif")),
+                tk.getImage(Missile.class.getClassLoader().getResource("images/bulletR.gif")),
+                tk.getImage(Missile.class.getClassLoader().getResource("images/missileRD.gif")),
+                tk.getImage(Missile.class.getClassLoader().getResource("images/bulletD.gif")),
+                tk.getImage(Missile.class.getClassLoader().getResource("images/missileLD.gif"))
+
+        };
+
+        imgs.put("L", missileimages[0]);
+        imgs.put("LU", missileimages[1]);
+        imgs.put("U", missileimages[2]);
+        imgs.put("RU", missileimages[3]);
+        imgs.put("R", missileimages[4]);
+        imgs.put("RD", missileimages[5]);
+        imgs.put("D", missileimages[6]);
+        imgs.put("LD", missileimages[7]);
+    }
+    
     int x,y;//位置属性
     private boolean live=true;
     //有方向属性
@@ -38,13 +69,49 @@ public class Missile {
             tc.missiles.remove(this);
             return;
         }
-
+        /*
         Color c=g.getColor();
         if(good) g.setColor(Color.ORANGE);
         else g.setColor(Color.BLACK);
         g.fillOval(x,y,WIDTH,HEIGHT);//子弹宽度10，高度10
         g.setColor(c);
+        *
 
+         */
+        switch (dir) {
+            case L:
+                g.drawImage(imgs.get("L"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x,y+Tank.HEIGHT/2);//画一条线（中心的点，左上角，右上角）
+                break;
+            case LD:
+                g.drawImage(imgs.get("LD"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x,y+Tank.HEIGHT);
+                break;
+            case D:
+                g.drawImage(imgs.get("D"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH/2,y+Tank.HEIGHT);
+                break;
+            case R:
+                g.drawImage(imgs.get("R"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH,y+Tank.HEIGHT/2);
+                break;
+            case U:
+                g.drawImage(imgs.get("U"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH/2,y);
+                break;
+            case LU:
+                g.drawImage(imgs.get("LU"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x,y);//坐上就是xy本身
+                break;
+            case RD:
+                g.drawImage(imgs.get("RD"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH,y+Tank.HEIGHT);
+                break;
+            case RU:
+                g.drawImage(imgs.get("RU"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH,y);
+                break;
+        }
         move();
     }
 

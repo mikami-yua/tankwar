@@ -3,8 +3,10 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * 这个类的作用是tank游戏的主窗口
@@ -14,7 +16,8 @@ public class TankClient extends Frame {
     //将窗口大小定义为常量
     public static final int GAMR_WIDTH=800;
     public static final int GAMR_HEIGTH=600;
-    public static final int GAME_ENEMTNUM=10;
+    //public static final int GAME_ENEMTNUM=10;
+
 
     Tank myTank=new Tank(50,50,true,Direction.STOP,this);
     Wall w1=new Wall(100,200,20,150,this);
@@ -33,8 +36,10 @@ public class TankClient extends Frame {
      * 本方法显示tank图片
      */
     public void lauchFrame(){
+
+        int tankNum=Integer.parseInt(PropertyMgr.getProperties("initTankCount"));
         //窗口显示前，添加若干tank
-        for (int i=0;i<GAME_ENEMTNUM;i++){
+        for (int i=0;i<tankNum;i++){
             tanks.add(new Tank(50+40*(i+1),50,false,Direction.D,this));
         }
 
@@ -87,7 +92,7 @@ public class TankClient extends Frame {
 
         //敌人死完了重新加入
         if(tanks.size()==0){
-            for (int i=0;i<GAME_ENEMTNUM;i++){
+            for (int i=0;i<Integer.parseInt(PropertyMgr.getProperties("reProduceTankCount"));i++){
                 tanks.add(new Tank(50+40*(i+1),500,false,Direction.D,this));
             }
         }

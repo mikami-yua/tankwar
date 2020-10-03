@@ -14,6 +14,19 @@ public class Explode {
                                                             //拿到默认的工具包。通过工具包里的方法把硬盘的图片拽到内存
     private static Image[] imgs={
             //Explode.class.getClassLoader().getResource("images/0.gif")
+            tk.getImage(Explode.class.getClassLoader().getResource("images/0.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/1.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/2.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/3.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/4.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/5.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/6.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/7.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/8.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/9.gif")),
+            tk.getImage(Explode.class.getClassLoader().getResource("images/10.gif"))
+
+            /*
             tk.getImage("E:\\tankwar\\src\\images\\0.gif"),
             tk.getImage("E:\\tankwar\\src\\images\\1.gif"),
             tk.getImage("E:\\tankwar\\src\\images\\2.gif"),
@@ -25,6 +38,8 @@ public class Explode {
             tk.getImage("E:\\tankwar\\src\\images\\8.gif"),
             tk.getImage("E:\\tankwar\\src\\images\\9.gif"),
             tk.getImage("E:\\tankwar\\src\\images\\10.gif")
+
+             */
     };
     private int step=0;//现在画到第几步了
     private TankClient tc;

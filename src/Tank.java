@@ -1,13 +1,15 @@
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class Tank {
     public static final int XSPEED=5;
     public static final int YSPEED=5;
-    public static final int WIDTH=30;
-    public static final int HEIGHT=30;
+    public static final int WIDTH=50;
+    public static final int HEIGHT=50;
 
     private int x,y;//坐标
     private boolean bL=false,bU=false,bR=false,bD=false;//是否按下了朝四个方向的键
@@ -22,6 +24,35 @@ public class Tank {
     private BloodBar bb=new BloodBar();
 
     TankClient tc;
+
+    private static Toolkit tk= Toolkit.getDefaultToolkit(); //通过toolkit可以获得一些适合操作系统做的事。
+    // 不同的操作系统提供的toolkit不一样.getDefaultToolkit()
+    //拿到默认的工具包。通过工具包里的方法把硬盘的图片拽到内存
+    private static Image[] tankimages=null;
+    private static Map<String,Image> imgs=new HashMap<>();
+    static {
+        tankimages=new Image[] {
+            //Explode.class.getClassLoader().getResource("images/0.gif")
+                    tk.getImage(Tank.class.getClassLoader().getResource("images/tankL.gif")),
+                    tk.getImage(Tank.class.getClassLoader().getResource("images/tankLU.gif")),
+                    tk.getImage(Tank.class.getClassLoader().getResource("images/tankU.gif")),
+                    tk.getImage(Tank.class.getClassLoader().getResource("images/tankRU.gif")),
+                    tk.getImage(Tank.class.getClassLoader().getResource("images/tankR.gif")),
+                    tk.getImage(Tank.class.getClassLoader().getResource("images/tankRD.gif")),
+                    tk.getImage(Tank.class.getClassLoader().getResource("images/tankD.gif")),
+                    tk.getImage(Tank.class.getClassLoader().getResource("images/tankLD.gif"))
+
+        };
+
+        imgs.put("L",tankimages[0]);
+        imgs.put("LU",tankimages[1]);
+        imgs.put("U",tankimages[2]);
+        imgs.put("RU",tankimages[3]);
+        imgs.put("R",tankimages[4]);
+        imgs.put("RD",tankimages[5]);
+        imgs.put("D",tankimages[6]);
+        imgs.put("LD",tankimages[7]);
+    }
 
 
 
@@ -76,43 +107,57 @@ public class Tank {
             }
             return;
         }
+
         if(good) bb.draw(g);
+        /*原来的tank只是画了一个圆
         //需要一个前景色（默认是黑色）
         Color c=g.getColor();
         if(good)  g.setColor(Color.BLUE);//自己的坦克画成蓝色
         else g.setColor(Color.RED);
         g.fillOval(x,y,WIDTH,HEIGHT);
 
+
+
         //不改变原来的前景色，用的时候改变一下，用完了再设置回去
         g.setColor(c);//把原来的颜色设置回来
+
+         */
 
         /*
         根据炮筒的方向画直线
          */
         switch (ptDir) {
             case L:
-                g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x,y+Tank.HEIGHT/2);//画一条线（中心的点，左上角，右上角）
+                g.drawImage(imgs.get("L"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x,y+Tank.HEIGHT/2);//画一条线（中心的点，左上角，右上角）
                 break;
             case LD:
-                g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x,y+Tank.HEIGHT);
+                g.drawImage(imgs.get("LD"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x,y+Tank.HEIGHT);
                 break;
             case D:
-                g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH/2,y+Tank.HEIGHT);
+                g.drawImage(imgs.get("D"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH/2,y+Tank.HEIGHT);
                 break;
             case R:
-                g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH,y+Tank.HEIGHT/2);
+                g.drawImage(imgs.get("R"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH,y+Tank.HEIGHT/2);
                 break;
             case U:
-                g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH/2,y);
+                g.drawImage(imgs.get("U"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH/2,y);
                 break;
             case LU:
-                g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x,y);//坐上就是xy本身
+                g.drawImage(imgs.get("LU"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x,y);//坐上就是xy本身
                 break;
             case RD:
-                g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH,y+Tank.HEIGHT);
+                g.drawImage(imgs.get("RD"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH,y+Tank.HEIGHT);
                 break;
             case RU:
-                g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH,y);
+                g.drawImage(imgs.get("RU"),x,y,null);
+                //g.drawLine(x+Tank.WIDTH/2,y+Tank.HEIGHT/2,x+Tank.WIDTH,y);
                 break;
         }
 
