@@ -184,3 +184,10 @@ version 3
     单例设计模式
 
 3.5 网络版开始
+    先剔除无关的内容
+        去掉敌人的tank
+
+3.5.1 Server需要两个
+        tcp用于建立客户端连接
+        udp用于转发游戏数据
+        server建立好之后需要client端连接到server

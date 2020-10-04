@@ -23,6 +23,7 @@ public class TankClient extends Frame {
     Wall w1=new Wall(100,200,20,150,this);
     Wall w2=new Wall(300,100,300,20,this);
     Blood bb=new Blood();
+    NetClient nc=new NetClient();//TankClient相当于一个大总管，网络相关的事交给netclient去做
 
     List<Missile> missiles=new ArrayList<>();
     List<Explode> explodes=new ArrayList<>();
@@ -39,9 +40,7 @@ public class TankClient extends Frame {
 
         int tankNum=Integer.parseInt(PropertyMgr.getProperties("initTankCount"));
         //窗口显示前，添加若干tank
-        for (int i=0;i<tankNum;i++){
-            tanks.add(new Tank(50+40*(i+1),50,false,Direction.D,this));
-        }
+
 
 
         //定义窗口出现的位置
@@ -90,12 +89,7 @@ public class TankClient extends Frame {
         g.drawString("now tanks count: "+tanks.size(),500,50);
         g.drawString("my life: "+myTank.getLife(),10,150);
 
-        //敌人死完了重新加入
-        if(tanks.size()==0){
-            for (int i=0;i<Integer.parseInt(PropertyMgr.getProperties("reProduceTankCount"));i++){
-                tanks.add(new Tank(50+40*(i+1),500,false,Direction.D,this));
-            }
-        }
+
 
         for(int i=0;i<missiles.size();i++){
             Missile m=missiles.get(i);
