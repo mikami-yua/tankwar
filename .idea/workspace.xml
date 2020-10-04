@@ -24,13 +24,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39bc8750-81b7-46a5-9941-fe2a0750cd2e" name="Default Changelist" comment="图片版结束">
-      <change afterPath="$PROJECT_DIR$/src/NetClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TankServer.java" afterDir="false" />
+    <list default="true" id="39bc8750-81b7-46a5-9941-fe2a0750cd2e" name="Default Changelist" comment="网络版开始">
+      <change afterPath="$PROJECT_DIR$/src/TankNewMsg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Log" beforeDir="false" afterPath="$PROJECT_DIR$/Log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/tankwar.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/tankwar.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NetClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NetClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TankClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TankClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TankServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TankServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +51,13 @@
     <excluded-from-favorite>
       <branch-storage>
         <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
           <entry type="REMOTE">
             <value>
               <list>
@@ -62,10 +71,17 @@
     <favorite-branches>
       <branch-storage>
         <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="network_branch" />
+              </list>
+            </value>
+          </entry>
           <entry type="REMOTE">
             <value>
               <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/linux" />
+                <branch-info repo="$PROJECT_DIR$" source="origin/network_branch" />
               </list>
             </value>
           </entry>
@@ -107,9 +123,16 @@
       <recent name="E:\tankwar\src\TankWar" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="TankClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.TankServer">
+    <configuration name="TankClient" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TankClient" />
+      <module name="tankwar" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TankServer" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TankServer" />
       <module name="tankwar" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,9 +151,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.TankClient" />
+      <item itemvalue="Application.TankServer" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TankClient" />
+        <item itemvalue="Application.TankServer" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +182,7 @@
       <workItem from="1601720510352" duration="244000" />
       <workItem from="1601720815043" duration="983000" />
       <workItem from="1601724497126" duration="4888000" />
-      <workItem from="1601773740013" duration="2075000" />
+      <workItem from="1601773740013" duration="9351000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1601112012535</created>
@@ -219,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601729220989</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="网络版开始">
+      <created>1601809612191</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601809612191</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,18 +281,24 @@
     <MESSAGE value="version 单机版结束。包含可运行的jar" />
     <MESSAGE value="追加doc文档" />
     <MESSAGE value="图片版结束" />
-    <option name="LAST_COMMIT_MESSAGE" value="图片版结束" />
+    <MESSAGE value="网络版开始" />
+    <option name="LAST_COMMIT_MESSAGE" value="网络版开始" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1894" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601812641389">
+      <screen x="1440" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1894" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601812641389" />
     <state x="2152" y="321" width="575" height="421" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601727678987">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="3448" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601458139165" />
     <state x="2152" y="321" width="575" height="421" key="#com.intellij.fileTypes.FileTypeChooser/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601727678987" />
-    <state x="3501" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1601296005890">
-      <screen x="2736" y="0" width="1920" height="1040" />
+    <state x="2205" y="232" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1601815222989">
+      <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="3501" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601296005890" />
+    <state x="2205" y="232" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601815222989" />
     <state x="3447" y="370" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601298146141">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
@@ -282,26 +323,26 @@
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
     <state x="3565" y="139" key="Github.UntrackedFilesDialog/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601111868335" />
-    <state width="1794" height="259" key="GridCell.Tab.0.bottom" timestamp="1601809039377">
+    <state width="1794" height="255" key="GridCell.Tab.0.bottom" timestamp="1601813697831">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
-    <state width="1794" height="259" key="GridCell.Tab.0.bottom/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601809039377" />
-    <state width="1794" height="259" key="GridCell.Tab.0.center" timestamp="1601809039377">
+    <state width="1794" height="255" key="GridCell.Tab.0.bottom/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601813697831" />
+    <state width="1794" height="255" key="GridCell.Tab.0.center" timestamp="1601813697831">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
-    <state width="1794" height="259" key="GridCell.Tab.0.center/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601809039377" />
-    <state width="1794" height="259" key="GridCell.Tab.0.left" timestamp="1601809039377">
+    <state width="1794" height="255" key="GridCell.Tab.0.center/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601813697831" />
+    <state width="1794" height="255" key="GridCell.Tab.0.left" timestamp="1601813697831">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
-    <state width="1794" height="259" key="GridCell.Tab.0.left/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601809039377" />
-    <state width="1794" height="259" key="GridCell.Tab.0.right" timestamp="1601809039377">
+    <state width="1794" height="255" key="GridCell.Tab.0.left/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601813697831" />
+    <state width="1794" height="255" key="GridCell.Tab.0.right" timestamp="1601813697831">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
-    <state width="1794" height="259" key="GridCell.Tab.0.right/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601809039377" />
+    <state width="1794" height="255" key="GridCell.Tab.0.right/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601813697831" />
     <state width="1877" height="325" key="GridCell.Tab.1.bottom" timestamp="1601212040823">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
@@ -323,11 +364,11 @@
     </state>
     <state x="3197" y="162" key="SettingsEditor/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601298583755" />
     <state x="1901" y="168" width="1037" height="737" key="SettingsEditor/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601720935696" />
-    <state x="1992" y="259" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1601809553650">
+    <state x="1992" y="259" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1601809616898">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="3288" y="249" key="Vcs.Push.Dialog.v2/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601298996025" />
-    <state x="1992" y="259" width="800" height="538" key="Vcs.Push.Dialog.v2/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601809553650" />
+    <state x="1992" y="259" width="800" height="538" key="Vcs.Push.Dialog.v2/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601809616898" />
     <state x="3244" y="174" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1601194167578">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>

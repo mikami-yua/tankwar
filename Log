@@ -191,3 +191,42 @@ version 3
         tcp用于建立客户端连接
         udp用于转发游戏数据
         server建立好之后需要client端连接到server
+
+3.5.2 问题：要不要存储client端的TCP socket
+    UDP：在Server端有一个线程，一个单独的udp接受线程。如有一个客户端给Server发了一个信息。Server这个udp线程接受到之后
+        会转发给其他的客户端。所以对于Server来说，需要保存客户端的相关信息（发到那个ip，那个端口应该知道）。知道这些端口
+        需要在tcp连上来以后就保存。保存到list中后
+    保留也行不保留也行：
+        保留：当断开连接的时候tcp4次挥手
+        不保留：使用udp模拟断开的重传机制
+    这里不保留了，所以tankclient打socket在传完数据后就可以关闭了
+
+3.5.3 UPD端口号没有去重需要解决
+      为每个客户端建立一个id，产生一个独一无二的号码
+        java.util.uuid
+
+3.5.4 多个客户联网，并发送坦克诞生的消息
+        知识点1：new一个udp的socket
+                DatagramSocket ds=new DatagramSocket(UDP_PORT);
+        知识点2：DatagramPacket
+             在码头发送和接收货物时都需要使用集装箱来装载货物，UDP通信也是一样，发送和接收的数据也需要使用“集装箱”进行打包，
+             为此JDK中提供了一个DatagramPacket类，该类的实例对象就相当于一个集装箱，用于封装UDP通信中发送或者接收的数据。
+
+             在创建发送端和接收端的DatagramPacket对象时，使用的构造方法有所不同，接收端的构造方法只需要接收一个字节数组来
+             存放接收到的数据，而发送端的构造方法不但要接收存放了发送数据的字节数组，还需要指定发送端IP地址和端口号。接下来
+             根据API文档的内容，对DatagramPacket的构造方法进行逐一详细地讲解。
+             DatagramPacket dp=new DatagramPacket(buf,buf.length);
+
+             DatagramPacket数据包的作用就如同是“集装箱”，可以将发送端或者接收端的数据封装起来。然而运输货物只有“集装箱”
+             是不够的，还需要有码头。在程序中需要实现通信只有DatagramPacket数据包也同样不行，为此JDK中提供的一个DatagramSocket类。
+             DatagramSocket类的作用就类似于码头，使用这个类的实例对象就可以发送和接收DatagramPacket数据包
+        知识点3：通过服务的receive方法将接收到的数据存入到数据包中
+
+        客户端应该在连上服务器时发送udp数据包，告诉大家，有新人加入，应该更新数据
+
+        怎么把一个信息发送出去：
+                    1.首先转换为字节数组,new出来ByteArrayOutputStream之后内存里就有了字节数组，默认32字节。可以自动增长
+                    2.把tank相关信息写入
+                    3.把字节数组封装为datagrampacket
+                        bytesArr.toByteArray()把写好数据的字节数组转换
+

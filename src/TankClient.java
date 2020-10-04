@@ -23,7 +23,7 @@ public class TankClient extends Frame {
     Wall w1=new Wall(100,200,20,150,this);
     Wall w2=new Wall(300,100,300,20,this);
     Blood bb=new Blood();
-    NetClient nc=new NetClient();//TankClient相当于一个大总管，网络相关的事交给netclient去做
+    NetClient nc=new NetClient(this);//TankClient相当于一个大总管，网络相关的事交给netclient去做
 
     List<Missile> missiles=new ArrayList<>();
     List<Explode> explodes=new ArrayList<>();
@@ -72,6 +72,9 @@ public class TankClient extends Frame {
 
         //坦克移动线程在窗口启动之后就可以开始
         new Thread(new PaintThread()).start();
+
+        //连接到服务区
+        nc.connect("127.0.0.1",TankServer.TCP_PORT);
 
     }
 
