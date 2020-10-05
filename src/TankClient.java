@@ -1,8 +1,5 @@
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +21,7 @@ public class TankClient extends Frame {
     Wall w2=new Wall(300,100,300,20,this);
     Blood bb=new Blood();
     NetClient nc=new NetClient(this);//TankClient相当于一个大总管，网络相关的事交给netclient去做
+    ConnectDialog dialog=new ConnectDialog();
 
     List<Missile> missiles=new ArrayList<>();
     List<Explode> explodes=new ArrayList<>();
@@ -74,7 +72,7 @@ public class TankClient extends Frame {
         new Thread(new PaintThread()).start();
 
         //连接到服务区
-        nc.connect("127.0.0.1",TankServer.TCP_PORT);
+        //nc.connect("127.0.0.1",TankServer.TCP_PORT);
 
     }
 
@@ -173,11 +171,17 @@ public class TankClient extends Frame {
     public class KeyMonitor extends KeyAdapter{
         /**
          * 按下什么键就向哪里走
+         * 按c可以联网
          * @param e
          */
         @Override
         public void keyPressed(KeyEvent e) {
-            myTank.keyPress(e);//把按下的键盘交给tank对象去处理
+            int key=e.getKeyCode();
+            if(key==KeyEvent.VK_F3){
+                dialog.setVisible(true);
+            }else {
+                myTank.keyPress(e);//把按下的键盘交给tank对象去处理
+            }
         }
 
         /**
@@ -193,6 +197,50 @@ public class TankClient extends Frame {
     public static void main(String[] args) {
         TankClient tc=new TankClient();
         tc.lauchFrame();
+    }
+
+    class ConnectDialog extends Dialog{
+        Button b=new Button("确定");
+        TextField tfIP=new TextField("127.0.0.1",12);
+        TextField tfPort=new TextField(""+TankServer.TCP_PORT,4);
+        TextField tfUDPPort=new TextField("2223",4);
+        /*
+        必须写一个构造方法，否则会报错，因为Dialog中没有参数为空的构造方法
+         */
+
+        /**
+         * 在当前的窗口建立一个Model Dialog
+         */
+        public ConnectDialog(){
+            super(TankClient.this,true);
+            this.setLayout(new FlowLayout());
+            this.add(new Label("IP:"));
+            this.add(tfIP);
+            this.add(new Label("Port:"));
+            this.add(tfPort);
+            this.add(new Label("My UDP Port:"));
+            this.add(tfUDPPort);
+            this.add(b);
+            this.setLocation(300,300);
+            this.pack();
+            this.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    setVisible(false);
+                }
+            });
+            b.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    String IP=tfIP.getText().trim();
+                    int port=Integer.parseInt(tfPort.getText().trim());
+                    int UPDPort=Integer.parseInt(tfUDPPort.getText().trim());
+                    nc.setUdpPort(UPDPort);
+                    nc.connect(IP,port);
+                    setVisible(false);
+                }
+            });
+        }
     }
 
 

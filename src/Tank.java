@@ -303,6 +303,8 @@ public class Tank {
      * 设置tank具体的方向
      */
     private void locateDirection(){
+        Direction oldDir=this.dir;
+
         if(bL && !bU && !bR && !bD) dir=Direction.L;
         else if(bL && bU && !bR && !bD) dir=Direction.LU;
         else if(bL && !bU && !bR && bD) dir=Direction.LD;
@@ -312,6 +314,15 @@ public class Tank {
         else if(!bL && !bU && bR && bD) dir=Direction.RD;
         else if(!bL && !bU && !bR && bD) dir=Direction.D;
         else dir=Direction.STOP;
+
+        /*
+        只要方向改变，就应该向服务器发送消息
+         */
+        if(dir != oldDir){
+            TankMoveMsg msg=new TankMoveMsg(id,dir,x,y);
+            tc.nc.send(msg);
+        }
+
     }
 
     /**

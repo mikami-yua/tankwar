@@ -31,7 +31,6 @@ public class TankServer {
             try {
                 s = ss.accept();
 
-
                 //接受客户端的udp端口信息
                 DataInputStream dis = new DataInputStream(s.getInputStream());
                 int udpPort = dis.readInt();
@@ -105,6 +104,15 @@ public class TankServer {
                      */
                     ds.receive(dp);//通过服务的receive方法将接收到的数据存入到数据包中
                     System.out.println("One Package received !");
+                    /*
+                    接受到数据后发送给其他的客户端
+                     */
+                    for(int i=0;i<clients.size();i++){
+                        Client c=clients.get(i);
+                        dp.setSocketAddress(new InetSocketAddress(c.IP,c.udpPort));//直接转发这个集装箱
+                        ds.send(dp);//ds码头再将集装箱发出去
+                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

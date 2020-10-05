@@ -1,27 +1,27 @@
+import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.DatagramSocket;
-import java.net.Socket;
-import java.net.SocketException;
+import java.net.*;
 
 public class NetClient {
     //定义自己的UPD端口号，将需要接受消息,不能写死，可能会有多个client
-    private static int UDP_PORT_START=2223;
     private int udpPort;
     TankClient tc;
     DatagramSocket ds=null;
 
     public NetClient(TankClient tc){
-        udpPort=UDP_PORT_START++;//当两个线程同时++，产生冲突。但此时并不会出现这种情况
         this.tc=tc;
-        try {
-            ds=new DatagramSocket(udpPort);//码头
-        } catch (SocketException e) {
-            e.printStackTrace();
-        }
+
     }
 
+    public int getUdpPort() {
+        return udpPort;
+    }
+
+    public void setUdpPort(int udpPort) {
+        this.udpPort = udpPort;
+    }
 
     /**
      * 连接到服务器
@@ -29,6 +29,11 @@ public class NetClient {
      * @param port 服务器端口
      */
     public void connect(String IP,int port){
+        try {
+            ds=new DatagramSocket(udpPort);//码头
+        } catch (SocketException e) {
+            e.printStackTrace();
+        }
         Socket s=null;
         try {
             s=new Socket(IP,port);//这样就连上了
@@ -59,11 +64,70 @@ public class NetClient {
         //2.需要把msg send出去。把相关信息全部放进字节数组，全部封装为datagrampacket。再通过datagramsocket把这个packet发送出去
         send(msg);
 
-
+        new Thread(new UDPRecvThread()).start();
     }
-    public void send(TankNewMsg msg){
+    public void send(Msg msg){
         //需要知道msg里什么信息，再依次发送出去。需要知道一个类的具体信息，不符合面向对象的封装性
         msg.send(ds,"127.0.0.1",TankServer.UDP_PORT);//让一个对象自己做自己的事，符合面相对象
 
+    }
+
+    private class UDPRecvThread implements Runnable{
+
+        byte[] buf=new byte[1024];
+
+        @Override
+        public void run() {
+            while(true){
+                while (ds !=null){
+                    DatagramPacket dp=new DatagramPacket(buf,buf.length);//一个集装箱，真正装数据的是buf
+                    try {
+                    /*
+                    receive是接货的码头，接到的数据放到集装箱中
+                     */
+                        ds.receive(dp);//通过服务的receive方法将接收到的数据存入到数据包中
+                        System.out.println("One Package received From Server !");
+
+                        /*
+                        对接受到数据进行解析
+                         */
+                        parse(dp);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        /**
+         * 解析收到的UPD数据包,数据dp=new DatagramPacket(buf,buf.length);//一个集装箱，真正装数据的是buf
+         * @param dp 收到的集装箱
+         */
+        private void parse(DatagramPacket dp) {
+            ByteArrayInputStream bais=new ByteArrayInputStream(buf,0,dp.getLength());//一根管道怼到数组上
+            //开始读
+            DataInputStream dis=new DataInputStream(bais);
+            int msgType= 0;
+            try {
+                msgType = dis.readInt();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Msg msg=null;
+            switch (msgType){
+                case Msg.TANK_NEW_MSG:
+
+                    msg=new TankNewMsg(tc);
+                    //一个对象自己最清楚自己，把管道交给他自己，自己分析
+                    msg.parse(dis);
+                    break;
+                case Msg.TANK_MOVE_MSG:
+                    msg=new TankMoveMsg(tc);
+                    msg.parse(dis);
+                    break;
+
+            }
+
+        }
     }
 }
