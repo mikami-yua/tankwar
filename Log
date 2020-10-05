@@ -246,3 +246,5 @@ version 3
     Dialog类
         Model Dialog必须处理完弹出的窗口后，才能继续操作
         Modeless Dialog弹出的窗口不影响其他的操作
+
+    学习窗口的使用

@@ -24,17 +24,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39bc8750-81b7-46a5-9941-fe2a0750cd2e" name="Default Changelist" comment="3.5.4 多客户联网">
-      <change afterPath="$PROJECT_DIR$/src/Msg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TankMoveMsg.java" afterDir="false" />
+    <list default="true" id="39bc8750-81b7-46a5-9941-fe2a0750cd2e" name="Default Changelist" comment="3.5.9 客户端自己指定UDP端口号">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Log" beforeDir="false" afterPath="$PROJECT_DIR$/Log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jar/tankwar.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/tankwar.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NetClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NetClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TankClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TankClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TankNewMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TankNewMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TankServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TankServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,26 +42,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="master" />
-              </list>
-            </value>
-          </entry>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
     <favorite-branches>
       <branch-storage>
         <map>
@@ -78,13 +49,6 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="network_branch" />
-              </list>
-            </value>
-          </entry>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/network_branch" />
               </list>
             </value>
           </entry>
@@ -97,6 +61,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="09dcf0a0-f180-480a-a3c9-01dd57112b68" />
   </component>
   <component name="HierarchyBrowserManager">
     <option name="SCOPE" value="Production" />
@@ -141,17 +108,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.TankClient" />
       <item itemvalue="Application.TankServer" />
@@ -184,7 +140,8 @@
       <workItem from="1601720815043" duration="983000" />
       <workItem from="1601724497126" duration="4888000" />
       <workItem from="1601773740013" duration="9817000" />
-      <workItem from="1601876129911" duration="11170000" />
+      <workItem from="1601876129911" duration="11263000" />
+      <workItem from="1601888651429" duration="170000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1601112012535</created>
@@ -263,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601816867283</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="3.5.9 客户端自己指定UDP端口号">
+      <created>1601888463108</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601888463108</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +256,8 @@
     <MESSAGE value="图片版结束" />
     <MESSAGE value="网络版开始" />
     <MESSAGE value="3.5.4 多客户联网" />
-    <option name="LAST_COMMIT_MESSAGE" value="3.5.4 多客户联网" />
+    <MESSAGE value="3.5.9 客户端自己指定UDP端口号" />
+    <option name="LAST_COMMIT_MESSAGE" value="3.5.9 客户端自己指定UDP端口号" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1894" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601812641389">
@@ -333,29 +298,29 @@
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
     <state x="3565" y="139" key="Github.UntrackedFilesDialog/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601111868335" />
-    <state width="1794" height="245" key="GridCell.Tab.0.bottom" timestamp="1601888390691">
+    <state width="1794" height="245" key="GridCell.Tab.0.bottom" timestamp="1601888506583">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
-    <state width="1794" height="245" key="GridCell.Tab.0.bottom/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888390691" />
+    <state width="1794" height="245" key="GridCell.Tab.0.bottom/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888506583" />
     <state width="1866" height="248" key="GridCell.Tab.0.bottom/1440.0.1920.1080/72.27.1368.873@1440.0.1920.1080" timestamp="1601884115027" />
-    <state width="1794" height="245" key="GridCell.Tab.0.center" timestamp="1601888390691">
+    <state width="1794" height="245" key="GridCell.Tab.0.center" timestamp="1601888506582">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
-    <state width="1794" height="245" key="GridCell.Tab.0.center/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888390691" />
+    <state width="1794" height="245" key="GridCell.Tab.0.center/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888506582" />
     <state width="1866" height="248" key="GridCell.Tab.0.center/1440.0.1920.1080/72.27.1368.873@1440.0.1920.1080" timestamp="1601884115026" />
-    <state width="1794" height="245" key="GridCell.Tab.0.left" timestamp="1601888390691">
+    <state width="1794" height="245" key="GridCell.Tab.0.left" timestamp="1601888506582">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
-    <state width="1794" height="245" key="GridCell.Tab.0.left/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888390691" />
+    <state width="1794" height="245" key="GridCell.Tab.0.left/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888506582" />
     <state width="1866" height="248" key="GridCell.Tab.0.left/1440.0.1920.1080/72.27.1368.873@1440.0.1920.1080" timestamp="1601884115026" />
-    <state width="1794" height="245" key="GridCell.Tab.0.right" timestamp="1601888390691">
+    <state width="1794" height="245" key="GridCell.Tab.0.right" timestamp="1601888506583">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601459983599" />
-    <state width="1794" height="245" key="GridCell.Tab.0.right/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888390691" />
+    <state width="1794" height="245" key="GridCell.Tab.0.right/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888506583" />
     <state width="1866" height="248" key="GridCell.Tab.0.right/1440.0.1920.1080/72.27.1368.873@1440.0.1920.1080" timestamp="1601884115026" />
     <state width="1877" height="325" key="GridCell.Tab.1.bottom" timestamp="1601212040823">
       <screen x="2736" y="0" width="1920" height="1040" />
@@ -373,16 +338,16 @@
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="325" key="GridCell.Tab.1.right/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601212040823" />
-    <state x="1901" y="168" width="1037" height="737" key="SettingsEditor" timestamp="1601817090067">
+    <state x="1901" y="168" width="1037" height="737" key="SettingsEditor" timestamp="1601888824188">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="3197" y="162" key="SettingsEditor/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601298583755" />
-    <state x="1901" y="168" width="1037" height="737" key="SettingsEditor/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601817090067" />
-    <state x="1992" y="259" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1601817096970">
+    <state x="1901" y="168" width="1037" height="737" key="SettingsEditor/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888824188" />
+    <state x="1992" y="259" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1601888788239">
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="3288" y="249" key="Vcs.Push.Dialog.v2/0.0.1368.872/2736.0.1920.1040@2736.0.1920.1040" timestamp="1601298996025" />
-    <state x="1992" y="259" width="800" height="538" key="Vcs.Push.Dialog.v2/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601817096970" />
+    <state x="1992" y="259" width="800" height="538" key="Vcs.Push.Dialog.v2/1440.0.1920.1080/0.27.1440.873@1440.0.1920.1080" timestamp="1601888788239" />
     <state x="3244" y="174" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1601194167578">
       <screen x="2736" y="0" width="1920" height="1040" />
     </state>
