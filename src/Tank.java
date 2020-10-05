@@ -6,16 +6,19 @@ import java.util.Map;
 import java.util.Random;
 
 public class Tank {
+    int id;
+
     public static final int XSPEED=5;
     public static final int YSPEED=5;
     public static final int WIDTH=50;
     public static final int HEIGHT=50;
 
-    private int x,y;//坐标
+    public int x,y;//坐标
+    public Direction dir=Direction.STOP;//默认起始状态不动
+    public boolean good;
+
     private boolean bL=false,bU=false,bR=false,bD=false;//是否按下了朝四个方向的键
-    private Direction dir=Direction.STOP;//默认起始状态不动
     private Direction ptDir=Direction.D;//默认炮筒方向向下
-    private boolean good;
     private boolean live=true;
     private static Random r=new Random();//建立一个随机数产生器
     private int step=r.nextInt(16)+3;//初始最少移动3步，最多移动18步
@@ -108,6 +111,7 @@ public class Tank {
             return;
         }
 
+
         if(good) bb.draw(g);
         /*原来的tank只是画了一个圆
         //需要一个前景色（默认是黑色）
@@ -161,6 +165,8 @@ public class Tank {
                 break;
         }
 
+        //画出id
+        g.drawString("id:"+id,x,y-20);
 
         move();
     }
@@ -297,6 +303,8 @@ public class Tank {
      * 设置tank具体的方向
      */
     private void locateDirection(){
+        Direction oldDir=this.dir;
+
         if(bL && !bU && !bR && !bD) dir=Direction.L;
         else if(bL && bU && !bR && !bD) dir=Direction.LU;
         else if(bL && !bU && !bR && bD) dir=Direction.LD;
@@ -306,6 +314,15 @@ public class Tank {
         else if(!bL && !bU && bR && bD) dir=Direction.RD;
         else if(!bL && !bU && !bR && bD) dir=Direction.D;
         else dir=Direction.STOP;
+
+        /*
+        只要方向改变，就应该向服务器发送消息
+         */
+        if(dir != oldDir){
+            TankMoveMsg msg=new TankMoveMsg(id,dir,x,y);
+            tc.nc.send(msg);
+        }
+
     }
 
     /**
