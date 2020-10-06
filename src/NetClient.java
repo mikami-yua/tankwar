@@ -44,6 +44,8 @@ public class NetClient {
             DataInputStream dis=new DataInputStream(s.getInputStream());
             int id=dis.readInt();
             tc.myTank.id=id;
+            if(id%2==0) tc.myTank.good=false;
+            else tc.myTank.good=true;
             System.out.println("Connected To Server! And ID is : "+id);
 
         } catch (IOException e) {
@@ -125,7 +127,17 @@ public class NetClient {
                     msg=new TankMoveMsg(tc);
                     msg.parse(dis);
                     break;
-
+                case Msg.MISSILE_NEW_MSG:
+                    msg=new MissileNewMsg(NetClient.this.tc);
+                    msg.parse(dis);
+                    break;
+                case Msg.TANK_DEAD_MSG:
+                    msg=new TankDeadMsg(NetClient.this.tc);
+                    msg.parse(dis);
+                    break;
+                case Msg.MISSILE_DEAD_MSG:
+                    msg=new MissileDeadMsg(NetClient.this.tc);
+                    break;
             }
 
         }

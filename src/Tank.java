@@ -218,10 +218,13 @@ public class Tank {
         if(x+Tank.WIDTH>TankClient.GAMR_WIDTH) x=TankClient.GAMR_WIDTH-Tank.WIDTH;
         if(y+Tank.HEIGHT>TankClient.GAMR_HEIGTH) y=TankClient.GAMR_HEIGTH-Tank.HEIGHT;
 
+
+
         /*
         每次move的时候就让bot tank改变方向
         使用随机数，随机产生方向
          */
+        /*
         if(!good){
             Direction[] dirs=Direction.values();//转换为数组
             if(step==0){
@@ -231,7 +234,9 @@ public class Tank {
             }
             step--;
             if(r.nextInt(30)>25) this.fire();
-        }
+        }*/
+
+
 
 
     }
@@ -333,15 +338,19 @@ public class Tank {
         if(!live) return null;
         int x=this.x+Tank.WIDTH/2 -Missile.WIDTH/2;
         int y=this.y+Tank.HEIGHT/2-Missile.HEIGHT/2;
-        Missile m=new Missile(x,y,good,ptDir,this.tc);//从tank的位置，向着tank的方向new一个子弹
+        Missile m=new Missile(id,x,y,good,ptDir,this.tc);//从tank的位置，向着tank的方向new一个子弹
         tc.missiles.add(m);
+
+        MissileNewMsg msg=new MissileNewMsg(m);
+        tc.nc.send(msg);
+
         return m;
     }
     public Missile fire(Direction dir){
         if(!live) return null;
         int x=this.x+Tank.WIDTH/2 -Missile.WIDTH/2;
         int y=this.y+Tank.HEIGHT/2-Missile.HEIGHT/2;
-        Missile m=new Missile(x,y,good,dir,this.tc);//从tank的位置，向着tank的方向new一个子弹
+        Missile m=new Missile(id,x,y,good,dir,this.tc);//从tank的位置，向着tank的方向new一个子弹
         tc.missiles.add(m);
         return m;
     }

@@ -9,7 +9,11 @@ public class Missile {
     public static final int WIDTH=10;
     public static final int HEIGHT=10;
 
+    private static int ID=1;
+
     private TankClient tc;
+    int tankId;
+    int id;
 
     private static Toolkit tk= Toolkit.getDefaultToolkit(); //通过toolkit可以获得一些适合操作系统做的事。
     // 不同的操作系统提供的toolkit不一样.getDefaultToolkit()
@@ -41,10 +45,10 @@ public class Missile {
     }
     
     int x,y;//位置属性
-    private boolean live=true;
+    public boolean live=true;
     //有方向属性
     Direction dir;
-    private boolean good;
+    public boolean good;
 
     public boolean isLive() {
         return live;
@@ -52,12 +56,14 @@ public class Missile {
 
 
     public Missile(int x, int y, Direction dir) {
+        this.id=ID++;
         this.x = x;
         this.y = y;
         this.dir = dir;
     }
-    public Missile(int x, int y,boolean good,Direction dir,TankClient tc){
+    public Missile(int tankId,int x, int y,boolean good,Direction dir,TankClient tc){
         this(x,y,dir);
+        this.tankId=tankId;
         this.good=good;
         this.tc=tc;
     }
